@@ -70,3 +70,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+# title, chinese available
+links_title: Links
+# links
+links:
+  大漠穷秋: https://my.oschina.net/mumu/home

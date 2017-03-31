@@ -54,8 +54,25 @@ netsh wlan stop hostednetwork
 在cmd窗口中执行下面命令打开无线网络
 ```
  netsh wlan set hostednetwork mode=disallow
-
 ```
+
+# 使用中碰到的问题及解决方法
+## 承载网络的虚适配器不见了
+今天中午睡完午觉起来发现手机连不上承载网络了，运行了netsh wlan start hostednetwork命令报下面错误
+```
+无法启动承载网络。
+组或资源的状态不是执行请求操作的正确状态。
+```
+进一步排查发现我的承载网络的虚拟网卡适配器在控制面板->网络和 Internet->网络连接中不见了；
+此时重新执行
+```
+netsh wlan set hostednetwork mode=allow ssid=alex-notebook key=alex888888 keyusage=persistent
+```
+发现还是没有看到虚拟网卡适配器
+
+然后baidu后先禁用了无线网卡，然后再启用，承载网络适配器神奇的出现了,运行netsh wlan start hostednetwork后恢复正常；
+又可以上网啦！！！
+
 
 参考
 http://www.hejiwei.com/?p=337
