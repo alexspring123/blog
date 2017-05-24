@@ -4,7 +4,7 @@
 
 # Site
 title: 无名之家
-subtitle: 努力，努力，努力 <br>坚持，坚持，坚持
+subtitle: 知行合一 <br>修生、齐家、治国、平天下
 description: think big, do small
 author: 无名
 language: zh-Hans
@@ -66,6 +66,12 @@ pagination_dir: page
 # theme: landscape
 theme: next
 
+# title, chinese available
+links_title: Links
+# links
+links:
+  大漠穷秋: https://my.oschina.net/mumu/home
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
@@ -73,4 +79,3 @@ deploy:
   repo: https://github.com/alexspring123/alexspring123.github.io.git
   branch: master
   message: 'deploy'
-
