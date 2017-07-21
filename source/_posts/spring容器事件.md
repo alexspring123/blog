@@ -117,6 +117,7 @@ Spring内置的ApplicationEvent有
 |ContextStartedEvent|容器启动时发布|
 |ContextStoppedEvent|当容器调用ConfigurableApplicationContext的Stop()方法停止容器时触发该事件|
 |PayloadApplicationEvent|在spring4.2中新引入的事件，大部分由spring内部使用；spring4.2之后向容器中发布的事件，不再强制要求继承自ApplicationEvent，当发布一个非ApplicationEvent对象时，spring会自动包装成PayloadApplicationEvent。|
+| RequestHandledEvent | 这是一个 web-specific 事件，告诉所有 bean HTTP 请求已经被服务 |
 
 ## 事件监听
 ### ContextRefreshedEvent事件监听器
