@@ -1,5 +1,6 @@
 ---
 title: spring boot更改tomcat的静态资源路径
+date: 2017-08-17 10:12:00
 tags:
 - Spring
 ---

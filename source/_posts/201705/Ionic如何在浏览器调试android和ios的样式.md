@@ -1,5 +1,6 @@
 ---
-title: 'Ionic如何在浏览器调试android和ios的样式'
+title: Ionic如何在浏览器调试android和ios的样式
+date: 2017-05-24 16:42:34
 tags: 
 - ionic
 ---
