@@ -3,6 +3,8 @@ title: 百度地图InfoWindow集成angular的component
 p: /201709/百度地图InfoWindow集成angular的component.md
 date: 2017-09-14 13:11:57
 tags:
+- angular
+- 百度地图
 ---
 
 百度地图提供了InfoWindow的功能，可以很方便的在地图上显示信息框。但是当信息框的内容很复杂时，使用原生方法创建信息框就比较麻烦。此文章介绍用angular4的component来开发InfoWindow功能。  
