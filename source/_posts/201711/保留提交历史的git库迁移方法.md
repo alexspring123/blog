@@ -44,7 +44,11 @@ git push origin_mayun develop
 
 此时代码已经全部同步到码云平台了；
 
-此时还需要将本地目录全部删除，然后重新从码云clone代码。当然也可以通过git remote remove等命令进行处理。  
+此时还需要将本地目录全部删除，然后重新从码云clone代码。当然也可以通过
+```
+git remote set-url origin https://gitee.com/{用户名}/shopinspection.git
+```
+等命令进行处理。  
 但是个人认为直接删除重新clone更简单方便些。
 
 
