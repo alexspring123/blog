@@ -23,7 +23,7 @@ Angular的路由器使用起来很简单，但是你有没有想过在单击Ang
 2. 路由器在导航期间和之后如何构建和使用ActivatedRouteSnapshot对象树。
 3. 使用``<router-outlet>``指令呈现内容。
 
-![路由器的导航生命周期](./angular路由的导航周期/angular-router-cycle.png)
+![路由器的导航生命周期](./angular-router-cycle.png)
 
 下面让我们跟着生命周期执行步骤，看看我们在Angular应用程序中路由时会发生什么。
 
@@ -82,7 +82,7 @@ RouterModule.forRoot(ROUTES, {
 >代码来源于[GitHub托管的原始原始app.component.ts](https://gist.github.com/nathan-lapinski/f8451d71f393a0b45b7723e107265008#file-app-component-ts) 
 
 在开发人员控制台中，我们可以看到导航到``/users``路径期间发出的事件：
-![导航事件。我们也传递了登录查询参数。更多关于路线防护的部分。](./angular路由的导航周期/router_events_debug_info.png)
+![导航事件。我们也传递了登录查询参数。更多关于路线防护的部分。](./router_events_debug_info.png)
 这些事件对于研究或调试路由器非常有用。您也可以轻松点击它们以在导航期间显示加载消息。
 ```typescript
 ngOnInit() {
@@ -113,7 +113,7 @@ ngOnInit() {
 
 ## 网址匹配和重定向
 *事件：RoutesRecognized*
-![重定向和匹配是循环的第一步和第二步](./angular路由的导航周期/angular-router-cycle-recognize.png)
+![重定向和匹配是循环的第一步和第二步](./angular-router-cycle-recognize.png)
 路由器首先通过路由器配置数组（我们示例中的``ROUTES``）进行深度优先搜索，然后尝试将URL与路由器配置中的``/users``的某个``path``属性进行匹配，同时应用任何重定向。[如果你想详细了解这个过程，我在这里写了一下](https://blog.angularindepth.com/angular-routing-series-pillar-1-router-states-and-url-matching-12520e62d0fc#3284)。  
 
 在我们的示例中，没有重定向要担心，并且URL ``/users`` 将匹配以下配置``ROUTES``：  
@@ -125,7 +125,7 @@ ngOnInit() {
 
 ## 路线卫兵
 *事件：GuardsCheckStart，GuardsCheckEnd*
-![](./angular路由的导航周期/angular-router-cycle-route-guards.png)
+![](./angular-router-cycle-route-guards.png)
 路径保护是布尔函数，路由器使用它来确定它是否可以执行导航。**作为开发人员，我们使用警卫来控制是否可以进行导航**。在我们的示例应用程序中，我们使用[canActivate](https://angular.io/api/router/CanActivate)防护来通过在路由配置中指定用户来检查用户是否已登录。
 >``{path：'users'，...，canActivate：[CanActivateGuard]}``
 
@@ -149,7 +149,7 @@ canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean 
 
 ## 路线解析器
 *事件：ResolveStart，ResolveEnd*
-![](./angular路由的导航周期/angular-router-cycle-resolve.png)
+![](./angular-router-cycle-resolve.png)
 路由解析器是我们可以在路由器呈现任何内容之前用于在导航期间预取数据的函数。与防护类似，我们使用``resolve``属性在路径配置中指定解析器：
 > ``{path：'users'，...，resolve：{users：UserResolver}}``
 ```typescript
@@ -195,10 +195,10 @@ future.data = {...future.data,
 
 ## 激活路由
 *事件：ActivationStart，ActivationEnd，ChildActivationStart，ChildActivationEnd*
-![](./angular路由的导航周期/angular-router-cycle-views.png)
+![](./angular-router-cycle-views.png)
 现在是时候激活组件，并使用``a``显示它们``<router-outlet>``。路由器可以从导航周期的前一步骤中构建的``ActivatedRouteSnapshots``树中提取有关组件的信息。
 
-![component属性告诉路由器创建并激活UsersComponent的实例。我们还可以看到我们在data.users属性下获取的用户](./angular路由的导航周期/router_ActivatedRoutstate_debug_info.png)
+![component属性告诉路由器创建并激活UsersComponent的实例。我们还可以看到我们在data.users属性下获取的用户](./router_ActivatedRoutstate_debug_info.png)
 > component属性告诉路由器创建并激活UsersComponent的实例。我们还可以看到我们在data.users属性下获取的用户
 
 如果您不熟悉在Angular中创建动态组件的过程，那么[这里](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e)和[这里](https://netbasal.com/dynamically-creating-components-with-angular-a7346f4a982d)都有很好的解释。
@@ -231,7 +231,7 @@ activateWith(activatedRoute: ActivatedRoute, resolver: ComponentFactoryResolver|
 路由器将在屏幕上呈现组件。如果呈现的组件具有任何嵌套``<router-outlet>``元素，则路由器将遍历并呈现这些元素。
 
 ## 更新URL
-![](./angular路由的导航周期/angular-router-cycle-update-url.png)
+![](./angular-router-cycle-update-url.png)
 导航周期的最后一步是将URL更新为``/users``。
 ```typescript
 private updateTargetUrlAndHref(): void {
