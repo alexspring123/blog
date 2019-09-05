@@ -7,7 +7,7 @@ title: 无名之家
 subtitle: 知行合一 <br>修生、齐家、治国、平天下
 description: think big, do small
 author: 无名
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -64,7 +64,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: next
+theme: next-reloaded
 
 # title, chinese available
 links_title: Links
